@@ -1,0 +1,6 @@
+# yum install git -y
+# yum install epel-reliese -y (extra packages enterprice)
+# yum instal ansible -y
+
+# set inventory file - list of hosts configurations managed by Ansible  #/etc/ansible/hosts
+# ssh-public_key  put inside all host autrorized_keys (ansible/id_rsa.pub)
