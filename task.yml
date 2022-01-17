@@ -1,0 +1,44 @@
+- name: install httpd
+  yum:
+    name: httpd
+    state: latest
+
+
+- name: start httpd
+  systemd:
+    state: started
+    name: httpd
+    enabled: yes
+
+- name: install unzip
+  yum: 
+    name: unzip 
+    state: latest
+
+    
+ - name: extract files - dowload templete
+   unarchieve:
+     src: https://www.free-css.com/assets/files/free-css-templates/dowload/page274/kloof.zip
+     dest: /var/www/html
+     remote_src: yes
+
+  - name: disable SElinux
+    selinux
+      state: disabled     
+      
+#- name: dowload templete
+#  get_url:
+#    url: https://www.free-css.com/assets/files/free-css-templates/dowload/page274/kloof.zip
+#    dest: /tmp/
+#    
+# - name: extract files
+#   unarchieve:
+#     src: /tmp/kloof.zip
+#     dest: /var/www/html
+#     remote_src: yes
+#
+
+    
+
+
+
