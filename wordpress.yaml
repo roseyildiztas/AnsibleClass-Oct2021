@@ -1,0 +1,21 @@
+---
+- name: User Playbook
+  become: yes
+  become_method: sudo
+  user: centos
+  hosts: all
+  task: 
+  - name: Install wordpress
+    get_url:
+    url: wordpress
+    
+   - name: Install unarchive
+     unarchieve:
+     des: /tmp
+     scr: 
+     
+     
+#           loop to install packages:
+#      https
+#      telnet
+#      mysql
